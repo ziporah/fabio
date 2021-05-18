@@ -2,7 +2,7 @@ FROM golang:1.15.5-alpine AS build
 
 RUN uname -a
 
-ARG iarch=armhfv6
+ARG iarch=armhfv7
 ARG consul_version=1.8.2
 ADD https://releases.hashicorp.com/consul/${consul_version}/consul_${consul_version}_linux_${iarch}.zip /usr/local/bin
 RUN cd /usr/local/bin && unzip consul_${consul_version}_linux_${iarch}.zip
