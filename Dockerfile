@@ -6,7 +6,6 @@ ARG iarch=armhfv6
 ARG consul_version=1.8.2
 ADD https://releases.hashicorp.com/consul/${consul_version}/consul_${consul_version}_linux_${iarch}.zip /usr/local/bin
 RUN cd /usr/local/bin && md5sum  consul_${consul_version}_linux_${iarch}.zip && ls -la consul_${consul_version}_linux_${iarch}.zip && unzip consul_${consul_version}_linux_${iarch}.zip
-RUN find / -name ld-linux-armhf.so.3
 RUN cd /usr/local/bin && ./consul --version
 
 ARG arch=arm
