@@ -48,4 +48,4 @@ jobs:
         name: Inspect image
         if: always() && github.event_name != 'pull_request'
         run: |
-          docker image inspect ${{ steps.build.outputs.digest }}
+          docker buildx imagetools inspect ziporah/fabio@${{ steps.build.outputs.digest }}
