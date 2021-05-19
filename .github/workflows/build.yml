@@ -43,7 +43,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: ziporah/fabio:latest 
+          tags: |
+            ziporah/fabio:1.5.15
+            ziporah/fabio:latest 
       -
         name: Inspect image
         if: always() && github.event_name != 'pull_request'
